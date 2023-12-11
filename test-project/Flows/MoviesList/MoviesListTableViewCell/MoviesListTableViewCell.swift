@@ -21,23 +21,11 @@ class MoviesListTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
-        imageLoadingTask?.cancel()
         posterImageView.image = nil
     }
 
     private func loadImage(movie: Movie) {
-        
-        imageLoadingTask = ImageLoader.shared.loadImage(from: movie.posterPath, placeholder: UIImage(named: "clapboard")!) { [weak self] image in
-            
-            guard 
-                let self = self
-            else {
-                return
-            }
-            
-            self.posterImageView.image = image
-        }
+        posterImageView.loadImage(from: movie.posterPath, placeholder: UIImage(named: "clapboard")!)
     }
 }
 

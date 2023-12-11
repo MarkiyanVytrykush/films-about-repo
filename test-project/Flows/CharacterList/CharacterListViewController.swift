@@ -1,5 +1,5 @@
 //
-//  MoviesListViewController.swift
+//  CharacterListViewController.swift
 //  test-project
 //
 //  Created by DS on 10.12.2023.
@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-// MARK: -  MoviesListViewController
-final class MoviesListViewController: BaseViewController {
+// MARK: -  CharacterListViewController
+final class CharacterListViewController: BaseViewController {
     
     // MARK: - Outlets
     
@@ -17,7 +17,7 @@ final class MoviesListViewController: BaseViewController {
     
     // MARK: - Properties
     
-    var presenter: MoviesListPresenterProtocol!
+    var presenter: CharacterListPresenterProtocol!
     
     // MARK: - Override methods
     
@@ -35,16 +35,11 @@ final class MoviesListViewController: BaseViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.registerCell(xib: MoviesListTableViewCell.self)
+        tableView.registerCell(xib: CharacterListTableViewCell.self)
     }
-    
-    @IBAction private func didTapOnCharactersShow(_ sender: Any) {
-        presenter.didTapShowCharacterList()
-    }
-    
 }
 
-extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
+extension CharacterListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.numberOfRows
@@ -52,19 +47,15 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: MoviesListTableViewCell = tableView.instiateCell(for: indexPath)
+        let cell: CharacterListTableViewCell = tableView.instiateCell(for: indexPath)
         presenter.configure(cell, index: indexPath.row)
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didSelectMoviesListCell(index: indexPath.row)
-    }
 }
 
-// MARK: -  MoviesListViewProtocol
-extension MoviesListViewController: MoviesListViewProtocol {
+// MARK: -  CharacterListViewProtocol
+extension CharacterListViewController: CharacterListViewProtocol {
     
     func reloadTableView() {
         DispatchQueue.main.async {

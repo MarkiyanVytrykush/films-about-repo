@@ -20,4 +20,5 @@ protocol MoviesListPresenterProtocol {
     
     func configure(_ cell: MoviesListTableViewCellProtocol, index: Int)
     func didSelectMoviesListCell(index: Int)
+    func didTapShowCharacterList()
 }

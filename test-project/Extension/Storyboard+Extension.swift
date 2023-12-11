@@ -17,6 +17,7 @@ extension UIStoryboard {
         
         case moviesList = "MoviesList"
         case movieDetails = "MovieDetails"
+        case characterList = "CharacterList"
         
         // MARK: - Properties
         
