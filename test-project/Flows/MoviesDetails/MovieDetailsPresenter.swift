@@ -69,6 +69,12 @@ class MoviesDetailsPresenter {
         
         loadAndSetupImage(movie: movieDetails)
     }
+    
+    func didTapShowCharacterList() {
+        
+        let characterList = moviesDetails.countCharacterOccurrences()
+        coordinator?.showCharacterList(for: characterList)
+    }
 }
 
 extension MoviesDetailsPresenter: MoviesDetailsPresenterProtocol {

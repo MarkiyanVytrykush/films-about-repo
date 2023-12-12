@@ -17,31 +17,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gvf-n0-7SG">
-                                <rect key="frame" x="0.0" y="103.33333333333331" width="393" height="714.66666666666674"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygh-LL-AFI">
-                                <rect key="frame" x="271" y="67" width="108" height="34.333333333333343"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34.333333333333343" id="BEz-fR-TBm"/>
-                                    <constraint firstAttribute="width" constant="108" id="UHU-EP-Qx6"/>
-                                </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Characters"/>
-                                <connections>
-                                    <action selector="didTapOnCharactersShow:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1W3-PK-GNc"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gvf-n0-7SG" firstAttribute="top" secondItem="Ygh-LL-AFI" secondAttribute="bottom" constant="2" id="9Hb-bZ-gkS"/>
-                            <constraint firstItem="Ygh-LL-AFI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="KOq-7E-Zat"/>
+                            <constraint firstItem="gvf-n0-7SG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="LFk-GN-9Zb"/>
                             <constraint firstItem="gvf-n0-7SG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RLJ-1X-NH6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gvf-n0-7SG" secondAttribute="bottom" id="mvW-vU-ZoM"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ygh-LL-AFI" secondAttribute="trailing" constant="14" id="wPt-vL-rXK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gvf-n0-7SG" secondAttribute="trailing" id="xLM-kV-0iV"/>
                         </constraints>
                     </view>

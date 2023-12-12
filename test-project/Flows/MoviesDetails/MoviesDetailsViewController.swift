@@ -30,6 +30,10 @@ final class MoviesDetailsViewController: BaseViewController {
         super.viewDidLoad()
         presenter.onViewDidLoad()
     }
+    
+    @IBAction private func didTapOnCharactersShow(_ sender: Any) {
+        presenter.didTapShowCharacterList()
+    }
 }
 
 // MARK: -  MoviesDetailsViewProtocol

@@ -35,7 +35,7 @@ struct MovieDetailsResult: Codable {
     let video: Bool?
     let voteAverage: Double?
     let voteCount: Int?
-
+    
     var genresTitle: String {
         return "Genres: \(genres.map { $0.name }.joined(separator: ", "))"
     }
@@ -66,5 +66,16 @@ struct MovieDetailsResult: Codable {
         case video = "video"
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
+    }
+}
+
+
+extension MovieDetailsResult {
+    
+    func countCharacterOccurrences() -> [Character: Int] {
+        
+        return title.reduce(into: [:]) { (characterOccurrences, char) in
+            characterOccurrences[char, default: 0] += 1
+        }
     }
 }

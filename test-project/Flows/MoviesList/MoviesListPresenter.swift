@@ -14,7 +14,6 @@ class MoviesListPresenter {
     private var apiClient: APIClient!
     private var movies: [Movie] = []
     private var coordinator: MoviesCoordinatorProtocol?
-    private var characterList: [Character: Int] = [:]
     
     var numberOfRows: Int {
         return movies.count
@@ -43,17 +42,7 @@ class MoviesListPresenter {
     private func configureModels(moviesResult: MovieResult) {
         
         self.movies = moviesResult.results
-        self.calculateCharacterCount()
         self.view?.reloadTableView()
-    }
-    
-    func calculateCharacterCount() {
-        
-        characterList = movies.reduce(into: [:]) { counts, movie in
-            movie.title.forEach { char in
-                counts[char, default: 0] += 1
-            }
-        }
     }
 }
 
@@ -71,9 +60,5 @@ extension MoviesListPresenter: MoviesListPresenterProtocol {
         
         let selectedMovie = movies[index]
         coordinator?.showMovieDetails(for: selectedMovie)
-    }
-    
-    func didTapShowCharacterList() {
-        coordinator?.showCharacterList(for: characterList)
     }
 }

@@ -37,11 +37,6 @@ final class MoviesListViewController: BaseViewController {
         tableView.dataSource = self
         tableView.registerCell(xib: MoviesListTableViewCell.self)
     }
-    
-    @IBAction private func didTapOnCharactersShow(_ sender: Any) {
-        presenter.didTapShowCharacterList()
-    }
-    
 }
 
 extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {

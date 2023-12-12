@@ -21,5 +21,8 @@ protocol MoviesDetailsViewProtocol: BaseViewController {
 }
 
 protocol MoviesDetailsPresenterProtocol {
+    
     func onViewDidLoad()
+    
+    func didTapShowCharacterList()
 }
